@@ -1,0 +1,182 @@
+body {
+  direction: rtl;
+  font-family: 'Varela Round', sans-serif;
+  background: linear-gradient(to bottom right, #fceabb, #f8b500);
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+}
+
+/* כותרת דרמטית עם צל */
+.main-title {
+  font-weight: bold;
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 40px;
+  background: linear-gradient(90deg, #e53935, #d81b60);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  display: inline-block;
+  position: relative;
+}
+
+.main-title::before {
+  content: "🍰 ";
+  position: relative;
+  left: 0;
+  -webkit-text-fill-color: initial;
+  background: none;
+}
+
+/* שדות טופס – בולטים עם גבול */
+input, select, textarea {
+  border: 2px solid #ced4da;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #ff5722;
+  box-shadow: 0 0 0 0.2rem rgba(255,87,34,0.25);
+  outline: none;
+}
+
+/* כפתורים חזקים ומודרניים */
+.btn-success,
+.btn-primary,
+.btn-outline-danger {
+  border-radius: 25px;
+  font-weight: bold;
+  padding: 10px 24px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: all 0.2s ease;
+}
+
+.btn-success {
+  background-color: #198754;
+  border: none;
+}
+.btn-success:hover {
+  background-color: #146c43;
+}
+
+.btn-primary {
+  background-color: #0d6efd;
+  border: none;
+}
+.btn-primary:hover {
+  background-color: #0b5ed7;
+}
+
+.btn-outline-danger {
+  border: 2px solid #dc3545;
+  color: #dc3545;
+}
+.btn-outline-danger:hover {
+  background-color: #dc3545;
+  color: white;
+}
+
+/* כרטיסים בולטים */
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-left: 5px solid #ff5722;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease;
+  animation: fadeIn 0.4s ease;
+}
+
+.card:hover {
+  transform: scale(1.015);
+}
+
+.card-title {
+  font-size: 1.5rem;
+  color: #e53935;
+  font-weight: bold;
+}
+
+/* חיפוש */
+#searchBox {
+  max-width: 400px;
+  margin: 0 auto;
+  border-radius: 25px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  transition: border-color 0.3s;
+}
+
+#searchBox:focus {
+  border-color: #f44336;
+  outline: none;
+}
+
+/* אנימציה לכרטיסים */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* רספונסיביות */
+@media (max-width: 576px) {
+  .main-title {
+    font-size: 2.2rem;
+  }
+
+  .card {
+    padding: 10px;
+  }
+
+  #searchBox {
+    width: 100%;
+  }
+}
+#loader {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(to bottom right, #fceabb, #f8b500);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  direction: rtl;
+}
+
+.loader-content {
+  text-align: center;
+  animation: fadeIn 1s ease;
+}
+
+.loader-content p {
+  font-size: 1.5rem;
+  color: #444;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.loader-gif {
+  width: 180px;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
